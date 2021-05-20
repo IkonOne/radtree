@@ -5,6 +5,9 @@
 #ifndef RADTREE_RADTREE_H
 #define RADTREE_RADTREE_H
 
+#include "radtree/detail/utils.h"
+#include "radtree/detail/bounds.h"
+
 #include <cstdint>
 #include <thrust/device_vector.h>
 #include <thrust/host_vector.h>
@@ -12,15 +15,13 @@
 #include <thrust/unique.h>
 #include <npp.h>
 
-#include "radtree/detail/utils.h"
-
 namespace radtree {
     namespace { // private
         struct mc_encoder {
-            explicit mc_encoder(utils::bounds b)
+            explicit mc_encoder(detail::bounds b)
                 : b(b) {}
 
-            utils::bounds b;
+            detail::bounds b;
 
             __device__
             uint32_t operator()(const float3& val) {
@@ -49,7 +50,7 @@ namespace radtree {
             int parent = -1;
         };
 
-        utils::bounds b_;
+        detail::bounds b_;
     };
 
     struct builder {
@@ -60,7 +61,7 @@ namespace radtree {
 
             thrust::device_vector<uint32_t> d_mcs(N);
             {
-                rt.b_ = utils::bounds::from_device(first, last);
+                rt.b_ = detail::bounds::from_device(first, last);
                 thrust::transform(first, last, d_mcs.begin(), mc_encoder(rt.b_));
             }
 

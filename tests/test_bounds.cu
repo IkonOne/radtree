@@ -26,7 +26,7 @@ int main(void)
     TIMER::STOP();
 
     TIMER::START("Reducing a bounding box containing all of the random float3's");
-    auto b = radtree::utils::bounds::from_device(d_vec.begin(), d_vec.end());
+    auto b = radtree::detail::bounds::from_device(d_vec.begin(), d_vec.end());
     TIMER::STOP();
 
     std::cout << '\n';
