@@ -10,7 +10,7 @@
 
 #include <iostream>
 
-using namespace radtree::utils;
+using namespace radtree::detail;
 
 int expect_eq(int expected, int actual) {
     std::cout << "Checking ( " << expected << " vs " << actual << " )\n";

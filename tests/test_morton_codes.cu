@@ -9,10 +9,10 @@
 #include "radtree/radtree.h"
 
 int test_mc(const uint32_t mc, const float3 point) {
-    if (mc != radtree::utils::encode_morton_code(point)) {
+    if (mc != radtree::detail::encode_morton_code(point)) {
         std::cout << "Encoding Failed\n";
         std::cout << "    Expected: 0x" << std::hex << std::setw(8) << std::setfill('0') << mc << '\n';
-        auto actual = radtree::utils::encode_morton_code(point);
+        auto actual = radtree::detail::encode_morton_code(point);
         std::cout << "    Actual: 0x" << std::hex << std::setw(8) << std::setfill('0') << actual << '\n';
         return 1;
     }

@@ -25,7 +25,7 @@ namespace radtree {
 
             __device__
             uint32_t operator()(const float3& val) {
-                return utils::encode_morton_code(b.map_to_1024(val));
+                return detail::encode_morton_code(b.map_to_1024(val));
             }
         };
 
