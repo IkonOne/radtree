@@ -18,19 +18,6 @@ namespace radtree::utils {
     using d_vec_dir_type = thrust::device_vector<int>;
     using h_vec_dir_type = thrust::host_vector<int>;
 
-    struct direction_op {
-        template <typename TDirectionZip>
-        __device__
-        int operator()(TDirectionZip it) {
-            auto mc_first = thrust::get<0>(it);
-            int size = thrust::get<1>(it);
-            int idx = thrust::get<2>(it);
-
-            auto diff = detail::delta(mc_first, size, idx, idx+1) - detail::delta(mc_first, size, idx, idx-1);
-            return diff > 0 ? 1 : -1;
-        }
-    };
-
     struct max_len_op {
         template <typename TMaxLenZipIt>
         __device__

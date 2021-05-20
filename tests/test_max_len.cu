@@ -2,6 +2,7 @@
 // Created by Erin M Gunn on 1/18/21.
 //
 
+#include "radtree/detail/direction_op.h"
 #include "radtree/radtree.h"
 
 #include <thrust/device_vector.h>
@@ -33,7 +34,7 @@ int main(void) {
                 thrust::make_counting_iterator(0)
             )
         );
-        thrust::transform(dir_it, dir_it + N, d_directions.begin(), radtree::utils::direction_op());
+        thrust::transform(dir_it, dir_it + N, d_directions.begin(), radtree::detail::direction_op());
     }
 
     thrust::host_vector<int> expected;

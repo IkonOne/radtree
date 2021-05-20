@@ -44,7 +44,7 @@ int main(void) {
         thrust::transform(
             mc_it_first, mc_it_first + d_mcs.size(),
             d_actual.begin(),
-            radtree::utils::direction_op()
+            radtree::detail::direction_op()
         );
         thrust::copy(d_actual.begin(), d_actual.end(), actual.begin());
     }

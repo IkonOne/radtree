@@ -5,8 +5,9 @@
 #ifndef RADTREE_RADTREE_H
 #define RADTREE_RADTREE_H
 
-#include "radtree/detail/utils.h"
+#include "radtree/detail/direction_op.h"
 #include "radtree/detail/bounds.h"
+#include "radtree/detail/utils.h"
 
 #include <cstdint>
 #include <thrust/device_vector.h>
@@ -75,7 +76,7 @@ namespace radtree {
                     )
                 );
 
-                thrust::transform(dir_it, dir_it + N-1, d_direction.begin(), utils::direction_op());
+                thrust::transform(dir_it, dir_it + N-1, d_direction.begin(), detail::direction_op());
             }
 
             thrust::device_vector<int> d_max_len(N);
