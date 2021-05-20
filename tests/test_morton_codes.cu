@@ -6,7 +6,7 @@
 #include <iostream>
 #include <iomanip>
 
-#include "../radtree.h"
+#include "radtree/radtree.h"
 
 int test_mc(const uint32_t mc, const float3 point) {
     if (mc != radtree::utils::encode_morton_code(point)) {

@@ -11,7 +11,10 @@ set(CMAKE_CUDA_STANDARD 17)
 #endif()
 
 #add_compile_options(-O3)
-add_executable(radtree main.cu)
+# add_executable(radtree main.cu)
+
+add_library(radtree INTERFACE)
+target_include_directories(radtree INTERFACE include/)
 
 # 53 for jetson nano
 set_property(TARGET radtree PROPERTY CUDA_ARCHITECTURES 53)

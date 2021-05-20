@@ -7,7 +7,7 @@
 #include <thrust/generate.h>
 #include <thrust/copy.h>
 #include <algorithm>
-#include "../radtree.h"
+#include "radtree/radtree.h"
 #include "../timer.h"
 
 int main(void)

@@ -2,7 +2,7 @@
 // Created by Erin M Gunn on 1/18/21.
 //
 
-#include "../radtree.h"
+#include "radtree/radtree.h"
 #include "../timer.h"
 
 #include <thrust/device_vector.h>
