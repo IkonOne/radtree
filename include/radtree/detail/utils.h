@@ -7,17 +7,6 @@
 #include <thrust/host_vector.h>
 
 namespace radtree::detail {
-    /**
-        *
-        * Transform Functors/Operators
-        *
-        */
-
-    using d_vec_mc_type = thrust::device_vector<uint32_t>;
-    using h_vec_mc_type = thrust::host_vector<uint32_t>;
-    using d_vec_dir_type = thrust::device_vector<int>;
-    using h_vec_dir_type = thrust::host_vector<int>;
-
     struct max_len_op {
         template <typename TMaxLenZipIt>
         __device__
