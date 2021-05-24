@@ -57,7 +57,7 @@ int main(void) {
                 thrust::make_counting_iterator(0)
             )
         );
-        thrust::transform(max_len_it, max_len_it + N, d_actual.begin(), radtree::utils::max_len_op());
+        thrust::transform(max_len_it, max_len_it + N, d_actual.begin(), radtree::detail::max_len_op());
         thrust::copy(d_actual.begin(), d_actual.end(), actual.begin());
     }
 

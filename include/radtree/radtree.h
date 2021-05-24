@@ -90,7 +90,7 @@ namespace radtree {
                     )
                 );
 
-                thrust::transform(max_len_it, max_len_it + N-1, d_max_len.begin(), utils::max_len_op());
+                thrust::transform(max_len_it, max_len_it + N-1, d_max_len.begin(), detail::max_len_op());
             }
 
             thrust::device_vector<int> d_len(N);
@@ -105,7 +105,7 @@ namespace radtree {
                     )
                 );
 
-                thrust::transform(len_it, len_it + N-1, d_len.begin(), utils::len_op());
+                thrust::transform(len_it, len_it + N-1, d_len.begin(), detail::len_op());
             }
 
             thrust::device_vector<int> d_split(N);
@@ -121,7 +121,7 @@ namespace radtree {
                     )
                 );
 
-                thrust::transform(split_it, split_it + N-1, d_split.begin(), utils::find_split_op());
+                thrust::transform(split_it, split_it + N-1, d_split.begin(), detail::find_split_op());
             }
 
             return rt;

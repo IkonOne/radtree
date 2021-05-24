@@ -57,7 +57,7 @@ int main(void) {
             )
         );
 
-        thrust::transform(max_len_it, max_len_it + N-1, d_max_len.begin(), radtree::utils::max_len_op());
+        thrust::transform(max_len_it, max_len_it + N-1, d_max_len.begin(), radtree::detail::max_len_op());
     }
 
     thrust::device_vector<int> actual(N);
@@ -73,7 +73,7 @@ int main(void) {
             )
         );
 
-        thrust::transform(len_it, len_it + N-1, d_actual.begin(), radtree::utils::len_op());
+        thrust::transform(len_it, len_it + N-1, d_actual.begin(), radtree::detail::len_op());
         thrust::copy(d_actual.begin(), d_actual.end(), actual.begin());
     }
 

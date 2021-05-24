@@ -6,7 +6,7 @@
 #include <thrust/device_vector.h>
 #include <thrust/host_vector.h>
 
-namespace radtree::utils {
+namespace radtree::detail {
     /**
         *
         * Transform Functors/Operators
