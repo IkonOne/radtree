@@ -1,6 +1,5 @@
 # radtree
 
-A reference implementation of the bounding volume hierarchy construction algorithm described by Karras.
+A reference implementation of the binary radix tree construction algorithm described by Karras.
 
-"Fast Parallel Construction of High-Quality Bounding Volume Hierarchies"
-https://research.nvidia.com/publication/2013-07_fast-parallel-construction-high-quality-bounding-volume-hierarchies
+[Maximizing Parallelism in the Construction of BVHs, Octrees, and k-d Trees](https://research.nvidia.com/sites/default/files/pubs/2012-06_Maximizing-Parallelism-in/karras2012hpg_paper.pdf)
